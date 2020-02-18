@@ -7,18 +7,18 @@ namespace ContinuationTasks
     {
         static void Main(string[] args)
         {
-            Task task1 = new Task(()=>{
+            var task1 = new Task(()=>{
                 Console.WriteLine($"Id задачи: {Task.CurrentId}");
             });
             
-            Task task2 = task1.ContinueWith(Display);
+            var task2 = task1.ContinueWith(Display);
  
-            Task task3 = task1.ContinueWith(t =>
+            var task3 = task1.ContinueWith(t =>
             {
                 Console.WriteLine($"Id задачи: {Task.CurrentId}");
             });
  
-            Task task4 = task2.ContinueWith(t =>
+            var task4 = task2.ContinueWith(t =>
             {
                 Console.WriteLine($"Id задачи: {Task.CurrentId}");
             });
